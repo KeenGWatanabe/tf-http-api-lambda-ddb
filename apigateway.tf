@@ -19,9 +19,9 @@ resource "aws_apigatewayv2_integration" "apigw_lambda" {
   payload_format_version = "2.0"
 }
 
-# resource "aws_apigatewayv2_route" "get_topmovies" {
-#   # todo: fill with appropriate value
-# }
+resource "aws_apigatewayv2_route" "get_topmovies" {
+  # todo: fill with appropriate value 
+}
 
 # resource "aws_apigatewayv2_route" "get_topmovies_by_year" {
 #   # todo: fill with appropriate value
