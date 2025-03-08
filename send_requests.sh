@@ -1,7 +1,11 @@
 #!/bin/bash
 
 INVOKE_URL=https://xxxxxxx.amazonaws.com
-
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+    echo "jq is not installed. Please install jq and try again."
+    exit 1
+fi
 # add movies
 echo "> add movies"
 for i in $(seq 2001 2003); do
