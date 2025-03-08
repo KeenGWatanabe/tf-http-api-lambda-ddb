@@ -13,26 +13,26 @@ resource "aws_apigatewayv2_stage" "default" {
 resource "aws_apigatewayv2_integration" "apigw_lambda" {
   api_id = aws_apigatewayv2_api.http_api.id
 
-  integration_uri        = "" # todo: fill with apporpriate value
+  integration_uri        = "" # todo: fill with appropriate value
   integration_type       = "AWS_PROXY"
   integration_method     = "POST"
   payload_format_version = "2.0"
 }
 
 # resource "aws_apigatewayv2_route" "get_topmovies" {
-#   # todo: fill with apporpriate value
+#   # todo: fill with appropriate value
 # }
 
 # resource "aws_apigatewayv2_route" "get_topmovies_by_year" {
-#   # todo: fill with apporpriate value
+#   # todo: fill with appropriate value
 # }
 
 # resource "aws_apigatewayv2_route" "put_topmovies" {
-#   # todo: fill with apporpriate value
+#   # todo: fill with appropriate value
 # }
 
 # resource "aws_apigatewayv2_route" "delete_topmovies_by_year" {
-#   # todo: fill with apporpriate value
+#   # todo: fill with appropriate value
 # }
 
 resource "aws_lambda_permission" "api_gw" {
