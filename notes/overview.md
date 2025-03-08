@@ -1,4 +1,4 @@
 [apigateway.tf ln22](./api_apigatewayv2_route.md)
-[main.tf caller_identity, local ](./aws_caller_identity.md)
-[integration_uri](./integration_uri.md)
+[main.tf 'caller_identity', 'local' ](./aws_caller_identity.md)
+[apigateway.tf 'integration_uri'](./integration_uri.md)
 [send_requests.sh](./send_requests.md)
