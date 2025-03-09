@@ -5,6 +5,7 @@ data "archive_file" "lambda_zip" {
 }
 
 resource "aws_lambda_function" "http_api_lambda" {
+  # Assuming you have a zip file containing your Lambda code
   filename         = data.archive_file.lambda_zip.output_path
   function_name    = "${local.name_prefix}-topmovies-api"
   description      = "Lambda function to write to dynamodb"
@@ -50,7 +51,7 @@ resource "aws_iam_policy" "lambda_exec_role" {
                 "dynamodb:PutItem",
                 "dynamodb:GetItem",
                 "dynamodb:Scan",
-                "dynamodb:DeleteItem",
+                "dynamodb:DeleteItem"
             ],
             "Resource": "${aws_dynamodb_table.table.arn}"
         },
