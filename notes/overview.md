@@ -2,3 +2,4 @@
 [main.tf 'caller_identity', 'local' ](./aws_caller_identity.md)
 [apigateway.tf 'integration_uri'](./integration_uri.md)
 [send_requests.sh](./send_requests.md)
+[INVOKE_URL at terminal](./INVOKE_URL.MD)

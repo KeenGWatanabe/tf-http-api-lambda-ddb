@@ -1,0 +1,37 @@
+This code snippet is a command that you can run in your terminal (either in Windows Subsystem for Linux (WSL) or on a Mac) to interact with an AWS Lambda function or an API Gateway endpoint. Specifically, it seems to be part of a process to add movies to a database.
+
+### What the Code Does:
+1. **Environment Variable Setup**:
+   - `INVOKE_URL=https://afuea3e3hl.execute-api.us-east-1.amazonaws.com`: This sets an environment variable named `INVOKE_URL` to the URL of an AWS API Gateway endpoint. This URL is the address of the API that you will be interacting with.
+
+2. **Purpose**:
+   - The `INVOKE_URL` is likely used in a subsequent command or script to send a request (e.g., a POST request) to the API endpoint. The API endpoint is probably connected to a backend service (like AWS Lambda) that processes the request and adds movie data to a database.
+
+### Where to Key It:
+- You should run this command in your terminal (WSL on Windows or Terminal on Mac).
+- After setting the `INVOKE_URL`, you would typically run another command or script that uses this URL to send data to the API. For example:
+  ```bash
+  curl -X POST -d '{"title": "Inception", "year": 2010}' $INVOKE_URL/movies
+  ```
+  This `curl` command sends a POST request to the API endpoint with movie data (in JSON format) to add a movie to the database.
+
+### Steps to Use:
+1. Open your terminal (WSL or Mac).
+2. Copy and paste the `INVOKE_URL` line into the terminal and press Enter.
+3. Run the subsequent command or script that uses `$INVOKE_URL` to interact with the API.
+
+### Example Workflow:
+```bash
+# Set the API endpoint URL
+INVOKE_URL=https://afuea3e3hl.execute-api.us-east-1.amazonaws.com
+
+# Use curl to send a POST request to add a movie
+curl -X POST -d '{"title": "Inception", "year": 2010}' $INVOKE_URL/movies
+```
+
+This example assumes the API expects a JSON payload with movie details. Adjust the payload and endpoint (`/movies`) as needed based on the API's documentation.
+
+### Notes:
+- Ensure you have the necessary permissions to access the API.
+- If the API requires authentication (e.g., API keys, tokens), you’ll need to include those in your request.
+- Replace the placeholder URL and payload with the actual values provided by the API documentation.
