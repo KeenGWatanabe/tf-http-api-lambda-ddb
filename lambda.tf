@@ -14,7 +14,9 @@ resource "aws_lambda_function" "http_api_lambda" {
   role             = aws_iam_role.lambda_exec.arn
 
   environment {
-    variables = {} # todo: fill with apporpriate value
+    variables = {
+      DDB_TABLE = "${local.name_prefix}-topmovies"
+    } # todo: fill with apporpriate value
   }
 }
 
@@ -47,7 +49,8 @@ resource "aws_iam_policy" "lambda_exec_role" {
             "Action": [
                 "dynamodb:PutItem",
                 "dynamodb:GetItem",
-                "dynamodb:Scan"
+                "dynamodb:Scan",
+                "dynamodb:DeleteItem",
             ],
             "Resource": "${aws_dynamodb_table.table.arn}"
         },

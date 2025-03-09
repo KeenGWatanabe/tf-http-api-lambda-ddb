@@ -32,13 +32,19 @@ resource "aws_apigatewayv2_route" "get_topmovies_by_year" {
 
 }
 
-# resource "aws_apigatewayv2_route" "put_topmovies" {
-#   # todo: fill with appropriate value
-# }
+resource "aws_apigatewayv2_route" "put_topmovies" {
+  api_id    = aws_apigatewayv2_api.http_api.id
+  route_key = "PUT /topmovies"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
+# todo: fill with appropriate value
+}
 
-# resource "aws_apigatewayv2_route" "delete_topmovies_by_year" {
-#   # todo: fill with appropriate value
-# }
+resource "aws_apigatewayv2_route" "delete_topmovies_by_year" {
+  api_id    = aws_apigatewayv2_api.http_api.id
+  route_key = "DELETE /topmovies/{year}"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
+# todo: fill with appropriate value
+}
 
 resource "aws_lambda_permission" "api_gw" {
   statement_id  = "AllowExecutionFromAPIGateway"
