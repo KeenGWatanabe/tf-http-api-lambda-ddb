@@ -5,7 +5,7 @@ resource "aws_dynamodb_table" "table" {
 
   attribute {
     name = "year"
-    type = "" # todo: fill with appropriate value
+    type = "string" # todo: fill with appropriate value
   }
 
 }

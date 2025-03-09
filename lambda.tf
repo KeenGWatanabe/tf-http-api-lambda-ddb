@@ -45,7 +45,9 @@ resource "aws_iam_policy" "lambda_exec_role" {
         {
             "Effect": "Allow",
             "Action": [
-                "dynamodb:GetItem"
+                "dynamodb:PutItem",
+                "dynamodb:GetItem",
+                "dynamodb:Scan"
             ],
             "Resource": "${aws_dynamodb_table.table.arn}"
         },
